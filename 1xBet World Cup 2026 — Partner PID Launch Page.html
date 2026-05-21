@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1xBet World Cup 2026 — Partner PID Launch Page</title>
+<meta name="description" content="Partner-facing launch page for 1xBet World Cup 2026 CPA traffic: GEO payouts, KPIs, launch timeline, match hooks and PID request generator." />
+<style>
+:root {
+  --violet:#584DE9;
+  --violet-2:#6E64FF;
+  --lavender:#B4B4FC;
+  --ink:#161333;
+  --muted:#6B6688;
+  --soft:#F4F2FF;
+  --soft2:#EEEAFE;
+  --line:#DED9FF;
+  --white:#FFFFFF;
+  --green:#1EAA69;
+  --amber:#F5A524;
+  --shadow: 0 26px 70px rgba(88,77,233,.20);
+  --shadow2: 0 12px 32px rgba(29,23,78,.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x:hidden; }
+body { overflow-x:hidden; }
+body {
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 15% 0%, rgba(180,180,252,.36), transparent 34rem),
+    radial-gradient(circle at 92% 8%, rgba(88,77,233,.17), transparent 28rem),
+    linear-gradient(180deg, #FBFAFF 0%, #F8F7FF 52%, #FFFFFF 100%);
+}
+a { color:inherit; text-decoration:none; }
+button, input, select, textarea { font: inherit; }
+.page { max-width:1220px; margin:0 auto; padding:22px; }
+.nav {
+  position: sticky; top: 0; z-index: 20;
+  backdrop-filter: blur(18px);
+  background: rgba(251,250,255,.76);
+  border-bottom:1px solid rgba(88,77,233,.11);
+}
+.nav .inner { max-width:1220px; margin:0 auto; padding:12px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.brand { display:flex; align-items:center; gap:0; font-weight:900; letter-spacing:-.03em; }
+.brand .brand-text { line-height:1; }
+.brand small { display:block; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:800; margin-top:4px; }
+.navlinks { display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+.navlinks a, .navlinks button { border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:999px; padding:9px 12px; cursor:pointer; font-weight:800; font-size:13px; box-shadow:0 8px 18px rgba(45,37,118,.06); }
+.navlinks a.primary, .navlinks button.primary { background:var(--violet); color:#fff; border-color:var(--violet); }
+.hero {
+  margin-top:28px; border:1px solid rgba(88,77,233,.18); background:
+    radial-gradient(circle at 85% 15%, rgba(88,77,233,.28), transparent 20rem),
+    linear-gradient(135deg, #FFFFFF 0%, #F4F2FF 52%, #ECE9FF 100%);
+  border-radius:34px; overflow:hidden; box-shadow:var(--shadow); position:relative;
+}
+.hero:before { content:""; position:absolute; inset:0; background-image:linear-gradient(90deg, rgba(88,77,233,.06) 1px, transparent 1px), linear-gradient(180deg, rgba(88,77,233,.06) 1px, transparent 1px); background-size:34px 34px; mask-image:linear-gradient(180deg, rgba(0,0,0,.9), transparent 85%); }
+.hero-inner { position:relative; display:grid; grid-template-columns: 1.25fr .75fr; gap:22px; padding:42px; align-items:stretch; }
+.badges { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+.badge { padding:8px 11px; border-radius:999px; background:#fff; border:1px solid var(--line); color:#352B8E; font-weight:900; font-size:12px; text-transform:uppercase; letter-spacing:.04em; box-shadow:0 7px 18px rgba(88,77,233,.08); }
+h1 { margin:0; font-size:clamp(44px,8vw,92px); line-height:.9; letter-spacing:-.075em; max-width:850px; }
+.grad { background:linear-gradient(135deg,var(--violet),#8B84FF 55%,#2F285E); -webkit-background-clip:text; color:transparent; }
+.subtitle { margin:22px 0 0; max-width:720px; font-size:19px; line-height:1.55; color:#403B62; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+.btn { border:0; border-radius:18px; padding:14px 18px; font-weight:950; cursor:pointer; display:inline-flex; gap:9px; align-items:center; justify-content:center; transition:.2s ease; }
+.btn:hover { transform:translateY(-2px); }
+.btn.primary { color:#fff; background:linear-gradient(135deg,var(--violet),#786EFF); box-shadow:0 16px 34px rgba(88,77,233,.28); }
+.btn.secondary { color:var(--ink); background:#fff; border:1px solid var(--line); box-shadow:0 12px 26px rgba(45,37,118,.08); }
+.count-card {
+  background:rgba(255,255,255,.74); border:1px solid rgba(88,77,233,.18); border-radius:28px; padding:24px; box-shadow:var(--shadow2); display:flex; flex-direction:column; justify-content:space-between; min-height:380px; backdrop-filter:blur(12px);
+}
+.count-title { color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.13em; font-weight:900; }
+.count-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:18px 0; }
+.count-box { background:linear-gradient(180deg,#fff,#F6F4FF); border:1px solid var(--line); border-radius:22px; padding:16px; text-align:center; }
+.count-box b { display:block; font-size:34px; letter-spacing:-.05em; }
+.count-box span { color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-size:11px; font-weight:900; }
+.kicker { border-radius:20px; background:var(--ink); color:#fff; padding:18px; }
+.kicker b { display:block; font-size:28px; letter-spacing:-.04em; }
+.kicker span { color:var(--lavender); font-weight:800; }
+.section { margin-top:26px; }
+.section-head { display:flex; align-items:end; justify-content:space-between; gap:18px; margin:0 0 14px; }
+.section h2 { font-size:32px; letter-spacing:-.055em; margin:0; }
+.section p.lead { margin:7px 0 0; color:var(--muted); line-height:1.55; max-width:780px; }
+.grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:26px; padding:20px; box-shadow:var(--shadow2); }
+.card h3 { margin:0 0 8px; font-size:16px; }
+.metric { font-size:30px; font-weight:950; letter-spacing:-.05em; color:var(--violet); }
+.muted { color:var(--muted); }
+.ticker { overflow:hidden; border-radius:26px; border:1px solid var(--line); background:#fff; box-shadow:var(--shadow2); }
+.ticker-track { display:flex; gap:12px; width:max-content; padding:14px; animation:ticker 36s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state:paused; }
+.ticker-card { min-width:190px; border-radius:20px; padding:16px; background:linear-gradient(145deg,#F9F8FF,#EEEAFE); border:1px solid rgba(88,77,233,.17); }
+.ticker-card strong { display:block; font-size:24px; }
+.ticker-card b { color:var(--violet); font-size:26px; }
+@keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+.controls { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:12px; }
+.control, select { border:1px solid var(--line); background:#fff; border-radius:16px; padding:13px 14px; min-height:48px; outline:none; box-shadow:0 8px 18px rgba(45,37,118,.05); }
+.control { min-width:250px; flex:1; }
+.table-wrap { background:#fff; border:1px solid var(--line); border-radius:26px; box-shadow:var(--shadow2); overflow:auto; }
+table { width:100%; border-collapse:collapse; }
+th,td { padding:15px 14px; border-bottom:1px solid #EEEAFB; text-align:left; vertical-align:top; }
+th { position:static; background:#FBFAFF; z-index:1; font-size:12px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
+tbody tr { transition:.16s ease; }
+tbody tr:hover { background:#F9F7FF; }
+.geo-pill { display:inline-flex; align-items:center; gap:7px; padding:7px 9px; border-radius:999px; background:var(--soft); color:#312A86; font-weight:950; }
+.priority { display:inline-flex; padding:7px 9px; border-radius:999px; font-size:12px; font-weight:950; }
+.priority.Priority { color:#fff; background:var(--violet); }
+.priority.Secondary { color:#4A438A; background:#ECE9FF; }
+.select-btn { border:1px solid var(--line); background:#fff; border-radius:13px; padding:9px 10px; cursor:pointer; font-weight:900; color:var(--violet); }
+.select-btn.active { background:var(--violet); color:#fff; border-color:var(--violet); }
+.pid-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:16px; }
+.selected-panel { background:linear-gradient(135deg,var(--ink),#302B73); color:#fff; border-radius:26px; padding:22px; box-shadow:var(--shadow); }
+.selected-panel h3 { margin:0 0 8px; font-size:24px; letter-spacing:-.04em; }
+.selected-chips { display:flex; flex-wrap:wrap; gap:8px; min-height:42px; margin:14px 0; }
+.chip { border:1px solid rgba(255,255,255,.24); background:rgba(255,255,255,.1); color:#fff; border-radius:999px; padding:8px 10px; font-weight:950; display:inline-flex; gap:6px; align-items:center; cursor:pointer; }
+.copybox { width:100%; min-height:265px; resize:vertical; border:1px solid var(--line); border-radius:22px; padding:18px; background:#fff; line-height:1.45; color:var(--ink); box-shadow:inset 0 1px 0 rgba(88,77,233,.04); }
+.toast { position:fixed; bottom:22px; left:50%; transform:translateX(-50%) translateY(24px); opacity:0; pointer-events:none; background:var(--ink); color:#fff; padding:13px 16px; border-radius:999px; box-shadow:0 20px 40px rgba(22,19,51,.25); z-index:100; font-weight:900; transition:.2s ease; }
+.toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+.timeline { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.step { position:relative; background:#fff; border:1px solid var(--line); border-radius:24px; padding:19px; box-shadow:var(--shadow2); }
+.step .num { width:34px; height:34px; display:grid; place-items:center; border-radius:13px; background:var(--violet); color:#fff; font-weight:950; margin-bottom:13px; }
+.geo-split { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.geo-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.lightchip { padding:9px 11px; border-radius:999px; background:#F2F0FF; border:1px solid var(--line); font-weight:950; color:#342E88; }
+.match-tools { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+.match-list { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.match { background:#fff; border:1px solid var(--line); border-radius:22px; padding:16px; box-shadow:0 8px 18px rgba(45,37,118,.06); }
+.match .date { font-weight:950; color:var(--violet); }
+.match .teams { margin:8px 0; font-size:17px; font-weight:950; letter-spacing:-.02em; }
+.match .tags { display:flex; gap:6px; flex-wrap:wrap; }
+.match .tag { font-size:11px; font-weight:950; color:#342E88; background:#F0EEFF; border:1px solid var(--line); padding:6px 7px; border-radius:999px; }
+.footer { margin:30px 0 10px; padding:22px; text-align:center; color:var(--muted); }
+.source-note { font-size:12px; color:var(--muted); }
+@media (max-width: 980px) {
+  .hero-inner,.pid-grid,.geo-split { grid-template-columns:1fr; }
+  .grid,.timeline,.match-list { grid-template-columns:repeat(2,1fr); }
+  th { top:0; }
+}
+@media (max-width: 680px) {
+  .page { padding:14px; } .nav .inner { padding:10px 14px; }
+  .navlinks a:not(.primary), .navlinks button:not(.primary) { display:none; }
+  .hero-inner { padding:24px; }
+  h1 { font-size:48px; }
+  .grid,.timeline,.match-list { grid-template-columns:1fr; }
+  .table-wrap { overflow:auto; }
+  table { min-width:960px; }
+  .count-grid { grid-template-columns:repeat(4,1fr); }
+  .count-box { padding:10px 6px; } .count-box b { font-size:24px; }
+}
+
+
+
+/* refined motion / decor layer */
+.hero, .selected-panel { isolation:isolate; }
+.hero:before { z-index:0; }
+.hero-inner { z-index:2; }
+.hero-inner > div:first-child,
+.count-card,
+.selected-panel > * { position:relative; z-index:3; }
+.hero-inner > div:first-child { max-width: 720px; }
+.count-card { position:relative; }
+.selected-panel { position:relative; overflow:hidden; }
+
+.hero-visual-layer,
+.contact-visual-layer {
+  position:absolute; inset:0; pointer-events:none; z-index:1;
+}
+.hero-visual-layer {
+  overflow:hidden;
+}
+
+.glass-prism {
+  position:absolute;
+  right:-92px;
+  top:34px;
+  width:390px;
+  height:300px;
+  opacity:.60;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 34px 72px rgba(88,77,233,.24));
+  animation: floatPrism 14s ease-in-out infinite;
+}
+.glass-prism::before,
+.glass-prism::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:34px;
+}
+.glass-prism::before {
+  clip-path: polygon(8% 36%, 36% 10%, 53% 23%, 74% 7%, 94% 33%, 79% 49%, 96% 74%, 69% 85%, 50% 70%, 23% 92%, 11% 63%, 27% 45%);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.28) 18%, rgba(180,180,252,.40) 28%, rgba(88,77,233,.92) 54%, rgba(255,255,255,.76) 74%, rgba(88,77,233,.58) 100%);
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.85),
+    inset -24px -20px 40px rgba(64,46,170,.18),
+    inset 20px 18px 34px rgba(255,255,255,.22);
+}
+.glass-prism::after {
+  clip-path: polygon(17% 40%, 37% 19%, 52% 28%, 73% 15%, 86% 36%, 71% 47%, 87% 67%, 65% 75%, 50% 64%, 29% 82%, 20% 59%, 31% 44%);
+  background:
+    radial-gradient(circle at 58% 45%, rgba(255,255,255,.96), rgba(255,255,255,.18) 16%, rgba(255,255,255,0) 35%),
+    linear-gradient(122deg, rgba(255,255,255,.40), rgba(255,255,255,0) 30%, rgba(255,255,255,.45) 51%, rgba(255,255,255,0) 66%);
+  mix-blend-mode: screen;
+}
+.hero-orb {
+  position:absolute;
+  right:238px;
+  top:220px;
+  width:92px; height:92px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255,255,255,.95), rgba(255,255,255,.44) 18%, rgba(110,100,255,.38) 40%, rgba(88,77,233,.72) 68%, rgba(88,77,233,.22) 100%);
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.8),
+    0 22px 42px rgba(88,77,233,.15);
+  opacity:.58;
+  animation: floatOrb 12s ease-in-out infinite;
+}
+.hero-ring {
+  position:absolute;
+  right:120px;
+  top:56px;
+  width:64px; height:64px;
+  border-radius:50%;
+  border:1px solid rgba(88,77,233,.18);
+  background: radial-gradient(circle, rgba(255,255,255,.48) 0 32%, rgba(255,255,255,0) 33% 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.75), 0 14px 28px rgba(88,77,233,.10);
+  backdrop-filter: blur(9px);
+  opacity:.75;
+  animation: floatRing 16s ease-in-out infinite;
+}
+.hero-pill {
+  position:absolute;
+  right:248px;
+  top:66px;
+  padding:9px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.65);
+  background: linear-gradient(135deg, rgba(255,255,255,.82), rgba(244,241,255,.52));
+  box-shadow: 0 14px 28px rgba(88,77,233,.12), inset 0 1px 0 rgba(255,255,255,.75);
+  color:#4A3FC0;
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.88;
+  animation: floatPill 15s ease-in-out infinite;
+}
+.hero::after {
+  content:"";
+  position:absolute;
+  right:-80px;
+  top:74px;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  background: radial-gradient(circle, rgba(180,180,252,.20), rgba(110,100,255,.12) 34%, rgba(110,100,255,0) 70%);
+  filter: blur(16px);
+  z-index:0;
+  pointer-events:none;
+}
+
+.contact-prism {
+  position:absolute;
+  right:-22px;
+  bottom:-26px;
+  width:160px;
+  height:160px;
+  opacity:.38;
+  transform: rotate(18deg);
+  filter: drop-shadow(0 18px 36px rgba(0,0,0,.20));
+  animation: floatPrismSmall 16s ease-in-out infinite;
+}
+.contact-prism::before,
+.contact-prism::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:24px;
+}
+.contact-prism::before {
+  clip-path: polygon(15% 45%, 41% 13%, 62% 31%, 90% 16%, 83% 50%, 98% 77%, 63% 86%, 41% 70%, 18% 90%, 8% 63%, 26% 50%);
+  background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,255,255,.12) 20%, rgba(180,180,252,.26) 30%, rgba(88,77,233,.85) 60%, rgba(255,255,255,.6) 82%, rgba(110,100,255,.4));
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.7), inset -16px -12px 22px rgba(42,32,111,.18);
+}
+.contact-prism::after {
+  clip-path: polygon(23% 47%, 42% 25%, 60% 37%, 81% 24%, 74% 47%, 87% 68%, 61% 75%, 44% 62%, 27% 78%, 18% 59%, 31% 50%);
+  background: radial-gradient(circle at 54% 45%, rgba(255,255,255,.95), rgba(255,255,255,.18) 18%, rgba(255,255,255,0) 36%);
+}
+.contact-pill {
+  position:absolute;
+  right:28px;
+  top:24px;
+  padding:7px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.22);
+  color:rgba(255,255,255,.78);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.72;
+  animation: floatPill 14s ease-in-out infinite reverse;
+}
+
+
+.glass-ribbon {
+  position:absolute;
+  right:-70px;
+  bottom:24px;
+  width:310px;
+  height:118px;
+  border-radius:42px;
+  opacity:.42;
+  transform: rotate(-11deg) skewX(-7deg);
+  background:
+    linear-gradient(115deg, rgba(255,255,255,.55), rgba(180,180,252,.22) 22%, rgba(88,77,233,.62) 46%, rgba(110,100,255,.34) 72%, rgba(255,255,255,.46)),
+    radial-gradient(circle at 25% 28%, rgba(255,255,255,.72), rgba(255,255,255,0) 32%);
+  border:1px solid rgba(255,255,255,.42);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.68),
+    inset -22px -14px 30px rgba(61,45,171,.16),
+    0 28px 62px rgba(88,77,233,.16);
+  filter: blur(.15px) drop-shadow(0 20px 42px rgba(88,77,233,.13));
+  animation: ribbonDrift 18s ease-in-out infinite;
+}
+.glass-ribbon::before {
+  content:"";
+  position:absolute;
+  left:28px;
+  top:18px;
+  width:78%;
+  height:18px;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(255,255,255,.75), rgba(255,255,255,0));
+  opacity:.50;
+  transform:rotate(4deg);
+}
+.hero-orb-2 {
+  width:44px;
+  height:44px;
+  right:354px;
+  top:154px;
+  opacity:.44;
+  animation: floatOrbTiny 11s ease-in-out infinite reverse;
+}
+.hero-pill-2 {
+  right:78px;
+  top:246px;
+  opacity:.72;
+  animation: floatPill 17s ease-in-out infinite reverse;
+}
+.motion-dots {
+  position:absolute;
+  right:44px;
+  top:174px;
+  width:138px;
+  height:138px;
+  border-radius:50%;
+  border:1px solid rgba(88,77,233,.10);
+  opacity:.62;
+  animation: orbitSoft 18s linear infinite;
+}
+.motion-dots i {
+  position:absolute;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:rgba(88,77,233,.56);
+  box-shadow:0 0 18px rgba(88,77,233,.32);
+}
+.motion-dots i:nth-child(1) { left:50%; top:-4px; }
+.motion-dots i:nth-child(2) { right:6px; bottom:28px; background:rgba(180,180,252,.78); }
+.motion-dots i:nth-child(3) { left:12px; bottom:18px; background:rgba(255,255,255,.78); }
+.light-trace {
+  position:absolute;
+  right:32px;
+  top:118px;
+  width:190px;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.9), rgba(180,180,252,.55), transparent);
+  box-shadow:0 0 24px rgba(255,255,255,.45);
+  opacity:.52;
+  transform:rotate(-25deg);
+  animation: traceSlide 13s ease-in-out infinite;
+}
+.contact-orbit {
+  position:absolute;
+  right:16px;
+  bottom:12px;
+  width:116px;
+  height:116px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.10);
+  opacity:.42;
+  animation: orbitSoft 22s linear infinite reverse;
+}
+.contact-orbit i {
+  position:absolute;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:rgba(255,255,255,.55);
+  box-shadow:0 0 16px rgba(180,180,252,.36);
+}
+.contact-orbit i:nth-child(1) { left:50%; top:-3px; }
+.contact-orbit i:nth-child(2) { right:4px; bottom:24px; background:rgba(180,180,252,.58); }
+.contact-orbit i:nth-child(3) { left:10px; bottom:18px; background:rgba(110,100,255,.66); }
+
+@keyframes ribbonDrift {
+  0%,100% { transform: translateY(0) rotate(-11deg) skewX(-7deg); }
+  50% { transform: translateY(13px) rotate(-7deg) skewX(-7deg); }
+}
+@keyframes floatOrbTiny {
+  0%,100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-14px) translateX(8px); }
+}
+@keyframes orbitSoft {
+  to { transform: rotate(360deg); }
+}
+@keyframes traceSlide {
+  0%,100% { transform: translateX(0) rotate(-25deg); opacity:.34; }
+  50% { transform: translateX(-24px) rotate(-23deg); opacity:.72; }
+}
+
+@keyframes floatPrism {
+  0%,100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-12px) rotate(-4deg); }
+}
+@keyframes floatPrismSmall {
+  0%,100% { transform: translateY(0) rotate(18deg); }
+  50% { transform: translateY(-10px) rotate(22deg); }
+}
+@keyframes floatOrb {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes floatRing {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(4deg); }
+}
+@keyframes floatPill {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 900px) {
+  .glass-prism { width:290px; height:230px; right:-86px; top:58px; opacity:.44; }
+  .glass-ribbon { width:230px; height:92px; right:-80px; bottom:22px; opacity:.30; }
+  .hero-orb-2 { right:260px; top:170px; }
+  .hero-pill-2, .light-trace { opacity:.36; }
+  .motion-dots { right:20px; top:168px; opacity:.36; }
+  .hero-orb { width:72px; height:72px; right:170px; top:212px; opacity:.44; }
+  .hero-ring { right:86px; top:62px; opacity:.60; }
+  .hero-pill { right:174px; top:72px; }
+}
+@media (max-width: 680px) {
+  .glass-prism, .glass-ribbon, .hero-orb, .hero-ring, .hero-pill, .motion-dots, .light-trace, .contact-prism, .contact-pill, .contact-orbit, .hero::after { opacity:.10 !important; }
+  .glass-prism, .glass-ribbon, .motion-dots, .light-trace, .contact-prism, .contact-orbit { display:none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .glass-prism, .glass-ribbon, .hero-orb, .hero-ring, .hero-pill, .motion-dots, .light-trace, .contact-prism, .contact-pill, .contact-orbit {
+    animation:none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav .inner { flex-direction:column; align-items:flex-start; }
+  .navlinks { width:100%; justify-content:flex-start; }
+  table { min-width:980px; }
+}
+@media print {
+  .nav,.hero-actions,.controls,.match-tools,.select-btn,.btn { display:none!important; }
+  body { background:#fff; } .card,.table-wrap,.match,.step,.hero { box-shadow:none; }
+}
+
+
+/* advanced digital motion layer + scroll rocket */
+body { overflow-x:hidden; }
+.nav { z-index:50; }
+.page { position:relative; z-index:2; }
+.ambient-digital-layer {
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.ambient-digital-layer .rail {
+  position:absolute;
+  top:10vh;
+  bottom:8vh;
+  width:1px;
+  background:linear-gradient(180deg, transparent, rgba(88,77,233,.18), rgba(180,180,252,.18), transparent);
+  opacity:.7;
+}
+.ambient-digital-layer .rail.left { left:max(18px, calc((100vw - 1220px)/2 - 54px)); }
+.ambient-digital-layer .rail.right { right:max(18px, calc((100vw - 1220px)/2 - 54px)); }
+.ambient-digital-layer .node {
+  position:absolute;
+  width:9px; height:9px;
+  border-radius:50%;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(88,77,233,.28);
+  box-shadow:0 0 0 8px rgba(88,77,233,.05), 0 10px 20px rgba(88,77,233,.10);
+  animation: nodePulse 6s ease-in-out infinite;
+}
+.ambient-digital-layer .node.n1 { left:max(14px, calc((100vw - 1220px)/2 - 58px)); top:24vh; }
+.ambient-digital-layer .node.n2 { left:max(14px, calc((100vw - 1220px)/2 - 58px)); top:64vh; animation-delay:-2s; }
+.ambient-digital-layer .node.n3 { right:max(14px, calc((100vw - 1220px)/2 - 58px)); top:38vh; animation-delay:-1s; }
+.ambient-digital-layer .node.n4 { right:max(14px, calc((100vw - 1220px)/2 - 58px)); top:76vh; animation-delay:-3s; }
+.ambient-digital-layer .scan {
+  position:absolute;
+  left:0; right:0; top:0;
+  height:160px;
+  background:linear-gradient(180deg, transparent, rgba(180,180,252,.10), transparent);
+  transform:translateY(-180px);
+  animation: scanDown 18s linear infinite;
+  opacity:.55;
+}
+@keyframes nodePulse { 0%,100% { transform:scale(1); opacity:.48; } 50% { transform:scale(1.35); opacity:.9; } }
+@keyframes scanDown { to { transform:translateY(calc(100vh + 180px)); } }
+
+.glass-cube {
+  position:absolute;
+  right:330px;
+  top:128px;
+  width:74px;
+  height:74px;
+  border-radius:20px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.88), rgba(180,180,252,.34) 35%, rgba(88,77,233,.58) 72%, rgba(255,255,255,.28));
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 22px 42px rgba(88,77,233,.12);
+  opacity:.54;
+  transform:rotate(14deg) skew(-4deg);
+  animation:cubeDrift 13s ease-in-out infinite;
+}
+.glass-cube::before {
+  content:"";
+  position:absolute;
+  inset:12px 10px auto auto;
+  width:24px; height:24px;
+  border-radius:9px;
+  background:rgba(255,255,255,.55);
+  filter:blur(.2px);
+}
+.signal-bars {
+  position:absolute;
+  right:48px;
+  bottom:42px;
+  display:flex;
+  align-items:end;
+  gap:6px;
+  padding:12px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.55);
+  background:rgba(255,255,255,.42);
+  box-shadow:0 18px 34px rgba(88,77,233,.10), inset 0 1px 0 rgba(255,255,255,.72);
+  backdrop-filter:blur(12px);
+  opacity:.62;
+  animation:signalFloat 12s ease-in-out infinite;
+}
+.signal-bars i {
+  display:block;
+  width:7px;
+  border-radius:999px;
+  background:linear-gradient(180deg, rgba(88,77,233,.95), rgba(180,180,252,.75));
+  animation:barSignal 2.8s ease-in-out infinite;
+}
+.signal-bars i:nth-child(1) { height:18px; animation-delay:-.2s; }
+.signal-bars i:nth-child(2) { height:30px; animation-delay:-.8s; }
+.signal-bars i:nth-child(3) { height:42px; animation-delay:-1.4s; }
+.signal-bars i:nth-child(4) { height:26px; animation-delay:-.5s; }
+@keyframes cubeDrift { 0%,100% { transform:translateY(0) rotate(14deg) skew(-4deg); } 50% { transform:translateY(-12px) rotate(20deg) skew(-4deg); } }
+@keyframes signalFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(10px); } }
+@keyframes barSignal { 0%,100% { transform:scaleY(.68); opacity:.55; } 50% { transform:scaleY(1); opacity:1; } }
+
+.scroll-rocket {
+  position:fixed;
+  top:88px;
+  right:max(14px, calc((100vw - 1220px)/2 - 104px));
+  width:74px;
+  height:128px;
+  z-index:3;
+  pointer-events:none;
+  opacity:.78;
+  transform:translate3d(0, var(--rocket-y, 0px), 0) rotate(var(--rocket-rot, -8deg));
+  transition:opacity .25s ease;
+  filter:drop-shadow(0 22px 30px rgba(88,77,233,.18));
+  will-change:transform;
+}
+.rocket-body {
+  position:absolute;
+  left:20px; top:6px;
+  width:34px; height:86px;
+  border-radius:22px 22px 16px 16px;
+  background:
+    radial-gradient(circle at 35% 18%, rgba(255,255,255,.96), rgba(255,255,255,.35) 18%, rgba(255,255,255,0) 38%),
+    linear-gradient(135deg, rgba(255,255,255,.94), rgba(180,180,252,.48) 36%, rgba(88,77,233,.84) 76%, rgba(60,49,173,.92));
+  border:1px solid rgba(255,255,255,.62);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.85), inset -8px -10px 18px rgba(42,32,111,.18);
+}
+.rocket-body::before {
+  content:"";
+  position:absolute;
+  left:9px; top:18px;
+  width:14px; height:14px;
+  border-radius:50%;
+  background:linear-gradient(135deg, rgba(255,255,255,.92), rgba(180,180,252,.62));
+  border:1px solid rgba(88,77,233,.28);
+  box-shadow:0 0 0 5px rgba(255,255,255,.20);
+}
+.rocket-body::after {
+  content:"";
+  position:absolute;
+  left:7px; bottom:10px;
+  width:20px; height:8px;
+  border-radius:999px;
+  background:rgba(255,255,255,.36);
+}
+.rocket-nose {
+  position:absolute;
+  left:24px; top:-6px;
+  width:26px; height:30px;
+  clip-path:polygon(50% 0, 100% 100%, 0 100%);
+  background:linear-gradient(135deg, rgba(255,255,255,.92), rgba(180,180,252,.38), rgba(88,77,233,.74));
+  border-radius:10px 10px 0 0;
+}
+.rocket-fin {
+  position:absolute;
+  bottom:36px;
+  width:24px; height:30px;
+  background:linear-gradient(135deg, rgba(88,77,233,.86), rgba(180,180,252,.55));
+  border:1px solid rgba(255,255,255,.45);
+}
+.rocket-fin.left { left:6px; clip-path:polygon(100% 0, 100% 100%, 0 88%); border-radius:14px 0 10px 16px; }
+.rocket-fin.right { right:6px; clip-path:polygon(0 0, 100% 88%, 0 100%); border-radius:0 14px 16px 10px; }
+.rocket-flame {
+  position:absolute;
+  left:23px; top:88px;
+  width:28px; height:40px;
+  border-radius:50% 50% 50% 50%;
+  background:radial-gradient(circle at 50% 22%, rgba(255,255,255,.95), rgba(180,180,252,.76) 22%, rgba(88,77,233,.74) 58%, rgba(88,77,233,0) 76%);
+  filter:blur(.2px);
+  transform-origin:50% 0;
+  animation:flamePulse .62s ease-in-out infinite;
+}
+.rocket-trail {
+  position:absolute;
+  left:31px; top:106px;
+  width:12px; height:96px;
+  border-radius:999px;
+  background:linear-gradient(180deg, rgba(180,180,252,.42), rgba(88,77,233,.16), rgba(88,77,233,0));
+  filter:blur(8px);
+  animation:trailPulse 1.4s ease-in-out infinite;
+}
+@keyframes flamePulse { 0%,100% { transform:scaleY(.86); opacity:.58; } 50% { transform:scaleY(1.16); opacity:.92; } }
+@keyframes trailPulse { 0%,100% { transform:scaleY(.82); opacity:.45; } 50% { transform:scaleY(1.05); opacity:.8; } }
+
+@media (max-width: 1420px) { .scroll-rocket { right:10px; opacity:.52; transform:translate3d(0, var(--rocket-y, 0px), 0) scale(.86) rotate(var(--rocket-rot, -8deg)); } }
+@media (max-width: 1024px) { .scroll-rocket, .ambient-digital-layer { display:none; } .glass-cube, .signal-bars { opacity:.22; } }
+@media (max-width: 680px) { .glass-cube, .signal-bars { display:none; } }
+@media (prefers-reduced-motion: reduce) {
+  .ambient-digital-layer .scan, .ambient-digital-layer .node, .glass-cube, .signal-bars, .signal-bars i, .rocket-flame, .rocket-trail {
+    animation:none !important;
+  }
+  .scroll-rocket { display:none; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="ambient-digital-layer" aria-hidden="true">
+  <span class="scan"></span>
+  <span class="rail left"></span>
+  <span class="rail right"></span>
+  <span class="node n1"></span>
+  <span class="node n2"></span>
+  <span class="node n3"></span>
+  <span class="node n4"></span>
+</div>
+<div class="scroll-rocket" id="scrollRocket" aria-hidden="true">
+  <span class="rocket-trail"></span>
+  <span class="rocket-nose"></span>
+  <span class="rocket-body"></span>
+  <span class="rocket-fin left"></span>
+  <span class="rocket-fin right"></span>
+  <span class="rocket-flame"></span>
+</div>
+
+<header class="nav">
+  <div class="inner">
+    <a class="brand" href="#top" aria-label="Appska partner launch page">
+      <span class="brand-text">Appska <small>Partner Launch</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="#brief">Brief</a><a href="#geo">GEO & Payouts</a><a href="#matches">Matches</a>
+      <button onclick="copyBrief()">Copy brief</button>
+      <a class="primary" href="#pids">Send PIDs</a>
+    </nav>
+  </div>
+</header>
+<main class="page" id="top">
+  <section class="hero">
+    <div class="hero-visual-layer" aria-hidden="true">
+      <span class="glass-prism"></span>
+      <span class="glass-ribbon"></span>
+      <span class="hero-orb"></span>
+      <span class="hero-orb hero-orb-2"></span>
+      <span class="hero-ring"></span>
+      <span class="hero-pill">PIDs</span>
+      <span class="hero-pill hero-pill-2">AF</span>
+      <span class="motion-dots"><i></i><i></i><i></i></span>
+      <span class="light-trace"></span>
+      <span class="glass-cube"></span>
+      <span class="signal-bars"><i></i><i></i><i></i><i></i></span>
+    </div>
+    <div class="hero-inner">
+      <div>
+        <div class="badges"><span class="badge">1xBet</span><span class="badge">CPA</span><span class="badge">first_deposit</span><span class="badge">AppsFlyer</span><span class="badge">CTA only</span><span class="badge">World Cup 2026</span></div>
+        <h1>World Cup 2026:<br><span class="grad">get ready for the action</span></h1>
+        <p class="subtitle">1xBet CPA campaign for sports and betting networks. We are collecting PIDs for pre-launch tests before the June 11 opening match.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#pids">Send PIDs for test →</a>
+          <button class="btn secondary" onclick="copyPidTemplate()">Copy PID template</button>
+        </div>
+      </div>
+      <aside class="count-card">
+        <div>
+          <div class="count-title">Countdown to opening match</div>
+          <div class="count-grid">
+            <div class="count-box"><b id="days">—</b><span>days</span></div>
+            <div class="count-box"><b id="hours">—</b><span>hours</span></div>
+            <div class="count-box"><b id="minutes">—</b><span>minutes</span></div>
+            <div class="count-box"><b id="seconds">—</b><span>seconds</span></div>
+          </div>
+        </div>
+        <div class="kicker"><span>Opening match</span><b>June 11, 2026</b><span>Mexico vs South Africa · 19:00 GMT</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="brief">
+    <div class="section-head"><div><h2>Campaign guardrails</h2><p class="lead">Clean CPA launch conditions for networks preparing football betting traffic.</p></div><button class="btn secondary" onclick="copyBrief()">Copy brief</button></div>
+    <div class="grid">
+      <div class="card"><h3>Offer</h3><div class="metric">1xBet</div><div class="muted">Vertical: iGaming / Betting</div></div>
+      <div class="card"><h3>Model & event</h3><div class="metric">CPA</div><div class="muted">PO event: first_deposit</div></div>
+      <div class="card"><h3>Tracking</h3><div class="metric">AF</div><div class="muted">MMP: AppsFlyer · Onelink: yes</div></div>
+      <div class="card"><h3>Traffic rule</h3><div class="metric">CTA</div><div class="muted">VTA is not allowed</div></div>
+      <div class="card"><h3>Soft KPI</h3><div class="metric">0.5%+</div><div class="muted">CR click → install</div></div>
+      <div class="card"><h3>Deposit KPI</h3><div class="metric">30%+</div><div class="muted">Sum of all deposits from costs</div></div>
+      <div class="card"><h3>Betting activity</h3><div class="metric">x3</div><div class="muted">Player bids from deposit amount</div></div>
+      <div class="card"><h3>Antifraud</h3><div class="metric">P360</div><div class="muted">CRM/BI reconciliation</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><h2>Top payout carousel</h2><p class="lead">Quick scan for high-value GEOs before sending PIDs.</p></div></div>
+    <div class="ticker"><div class="ticker-track" id="ticker"></div></div>
+  </section>
+
+  <section class="section" id="geo">
+    <div class="section-head"><div><h2>GEO priority board & payout table</h2><p class="lead">Click GEO rows to add them to your PID submission message.</p></div><button class="btn secondary" onclick="downloadGeoCsv()">Download GEO CSV</button></div>
+    <div class="geo-split">
+      <div class="card"><h3>Priority GEOs</h3><p class="muted">Best starting mix of payout, World Cup match hooks, football intent or premium test value.</p><div class="geo-list" id="priorityList"></div></div>
+      <div class="card"><h3>Secondary GEOs</h3><p class="muted">Good for controlled tests, cheaper traffic, add-on volume, or proven sports/betting audiences.</p><div class="geo-list" id="secondaryList"></div></div>
+    </div>
+    <div class="controls" style="margin-top:16px">
+      <input class="control" id="geoSearch" placeholder="Search GEO, country, OS, payout..." oninput="renderGeoTable()" />
+      <select id="priorityFilter" onchange="renderGeoTable()"><option value="All">All priorities</option><option>Priority</option><option>Secondary</option></select>
+      <select id="osFilter" onchange="renderGeoTable()"><option value="All">All OS</option><option value="Android">Android</option><option value="iOS">iOS</option><option value="TBC">TBC</option></select>
+      <button class="btn secondary" onclick="clearSelected()">Clear selected</button>
+    </div>
+    <div class="table-wrap"><table id="geoTable"><thead><tr><th data-sort="geo">GEO</th><th data-sort="country">Country</th><th data-sort="os">OS</th><th data-sort="po">PO</th><th data-sort="mindep">MinDep</th><th data-sort="priority">Priority</th><th>Why launch</th><th>Select</th></tr></thead><tbody></tbody></table></div>
+    <p class="source-note">MinDep is based on the current brief. “TBC” means the value or OS/link should be confirmed before launch.</p>
+  </section>
+
+  <section class="section" id="timeline">
+    <div class="section-head"><div><h2>Launch timeline</h2><p class="lead">Recommended flow for networks before and during the tournament.</p></div></div>
+    <div class="timeline">
+      <div class="step"><div class="num">1</div><h3>Now</h3><p class="muted">Send GEO list, source type, expected volume and PIDs for pre-check.</p></div>
+      <div class="step"><div class="num">2</div><h3>Before June 11</h3><p class="muted">Launch controlled tests on priority GEOs and prepare countdown creatives.</p></div>
+      <div class="step"><div class="num">3</div><h3>Group stage</h3><p class="muted">Push traffic around local team matches and high-intent fixtures.</p></div>
+      <div class="step"><div class="num">4</div><h3>Knockouts</h3><p class="muted">Scale proven PIDs with live-betting and elimination-match angles.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="matches">
+    <div class="section-head"><div><h2>World Cup group-stage match hooks</h2><p class="lead">Use these events to plan countdown, pre-match, first-deposit and live-betting creatives.</p></div><button class="btn secondary" onclick="downloadMatchCsv()">Download match CSV</button></div>
+    <div class="match-tools"><input class="control" id="matchSearch" placeholder="Search team, date, group, GEO tag..." oninput="renderMatches()"><select id="matchGeoFilter" onchange="renderMatches()"><option value="All">All matches</option><option value="Offer">Only matches with offer GEO tags</option></select></div>
+    <div class="match-list" id="matchList"></div>
+  </section>
+
+  <section class="section" id="creatives">
+    <div class="section-head"><div><h2>Creative package</h2><p class="lead">Recommended countdown messages for pre-launch tests.</p></div></div>
+    <div class="grid">
+      <div class="card"><h3>Countdown</h3><p class="muted">World Cup starts soon</p></div>
+      <div class="card"><h3>Deposit</h3><p class="muted">Make your first deposit before kickoff</p></div>
+      <div class="card"><h3>Build-up</h3><p class="muted">Get ready for the biggest football month</p></div>
+      <div class="card"><h3>Opening games</h3><p class="muted">Bet on opening matches</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="pids">
+    <div class="section-head">
+      <div>
+        <h2>Ready to launch 1xBet traffic?</h2>
+        <p class="lead">Send your available GEOs, source details and PIDs directly to Appska. No forms — just copy the message or email us.</p>
+      </div>
+    </div>
+    <div class="pid-grid">
+      <div class="selected-panel">
+        <div class="contact-visual-layer" aria-hidden="true">
+          <span class="contact-pill">Appska</span>
+          <span class="contact-prism"></span>
+          <span class="contact-orbit"><i></i><i></i><i></i></span>
+        </div>
+        <h3>Direct contact</h3>
+        <p style="color:var(--lavender); margin:0 0 14px">For PID submission and launch coordination:</p>
+        <a href="mailto:e.podgayskaya@appska.com" style="display:inline-flex; align-items:center; gap:8px; color:#fff; font-weight:950; font-size:18px; word-break:break-all; margin:8px 0 18px">e.podgayskaya@appska.com</a>
+        <div class="hero-actions" style="margin-top:10px">
+          <button class="btn primary" onclick="copyEmail()">Copy email</button>
+          <button class="btn secondary" onclick="mailtoDraft()">Open email draft</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>What to send</h3>
+        <p class="muted" style="margin-top:0">To receive links faster, include these details in one message.</p>
+        <div class="selected-chips" id="selectedChips"></div>
+        <textarea class="copybox" id="pidBox" aria-label="PID request message template"></textarea>
+        <div class="hero-actions">
+          <button class="btn primary" onclick="copyFromBox()">Copy message</button>
+          <button class="btn secondary" onclick="resetPidBox()">Reset template</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">Appska Partner Launch · 1xBet World Cup 2026 CPA campaign · No official tournament logos or team crests are used on this page.</footer>
+</main>
+<div id="toast" class="toast">Copied</div>
+<script>
+const GEO_DATA = [{"geo": "KR", "country": "South Korea", "os": "Android", "po": 80, "mindep": "$3", "priority": "Priority", "why": "Highest payout + South Korea opener on June 11. Strong football intent and clear match hooks."}, {"geo": "SA", "country": "Saudi Arabia", "os": "Android", "po": 75, "mindep": "4 SAR", "priority": "Priority", "why": "Top payout + Saudi Arabia group matches. Strong GCC sports audience."}, {"geo": "MA", "country": "Morocco", "os": "Android", "po": 45, "mindep": "15 MAD", "priority": "Priority", "why": "Morocco opens vs Brazil on June 13. Strong national-team emotion and sports demand."}, {"geo": "TR", "country": "Türkiye", "os": "Android", "po": 42.5, "mindep": "TBC", "priority": "Priority", "why": "Türkiye opener vs Australia and USA/Paraguay follow-up hooks. Strong sports traffic potential."}, {"geo": "JO", "country": "Jordan", "os": "Android", "po": 50, "mindep": "1 JOD", "priority": "Priority", "why": "Jordan World Cup debut + $50 CPA. Excellent national-pride creative angle."}, {"geo": "IQ", "country": "Iraq", "os": "Android", "po": 50, "mindep": "1400 IQD", "priority": "Priority", "why": "Iraq Group I campaign + $50 CPA. Arabic football creatives can be launched fast."}, {"geo": "QA", "country": "Qatar", "os": "Android", "po": 40, "mindep": "4 QAR", "priority": "Priority", "why": "Qatar Group B matches + Gulf audience. Useful for pre-match and live-betting creatives."}, {"geo": "DZ", "country": "Algeria", "os": "Android", "po": 35, "mindep": "150 DZD", "priority": "Priority", "why": "Argentina vs Algeria and Jordan vs Algeria are strong group-stage hooks."}, {"geo": "EG", "country": "Egypt", "os": "Android + iOS", "po": 12.5, "mindep": "15 EGP", "priority": "Priority", "why": "Egypt has multiple clean match hooks and low MinDep. Good for volume tests."}, {"geo": "UZ", "country": "Uzbekistan", "os": "Android", "po": 10, "mindep": "11500 UZS", "priority": "Priority", "why": "World Cup debut + Portugal/Colombia/DR Congo hooks. Good for local-pride angles."}, {"geo": "SN", "country": "Senegal", "os": "Android + iOS", "po": 10, "mindep": "600 XOF", "priority": "Priority", "why": "France vs Senegal is a top emotional hook; additional Norway/Iraq matches support retargeting."}, {"geo": "KZ", "country": "Kazakhstan", "os": "iOS", "po": 47.5, "mindep": "1500 KZT / $2.79", "priority": "Priority", "why": "High payout iOS-only test. Good for premium CIS iOS sources."}, {"geo": "KW", "country": "Kuwait", "os": "Android", "po": 60, "mindep": "1 KWD", "priority": "Secondary", "why": "High payout. Launch with proven sports/betting audience and clean source quality."}, {"geo": "SG", "country": "Singapore", "os": "Android", "po": 50, "mindep": "1 SGD", "priority": "Secondary", "why": "High payout premium GEO. Best for controlled source tests."}, {"geo": "BH", "country": "Bahrain", "os": "Android", "po": 40, "mindep": "0.10 BHD", "priority": "Secondary", "why": "Gulf GEO with solid payout. Useful for Arabic/GCC sports bundles."}, {"geo": "OM", "country": "Oman", "os": "Android", "po": 40, "mindep": "TBC", "priority": "Secondary", "why": "Gulf GEO with solid payout. Test with relevant sports audience."}, {"geo": "YE", "country": "Yemen", "os": "Android", "po": 40, "mindep": "TBC", "priority": "Secondary", "why": "High payout. Use only when the source can deliver real betting intent."}, {"geo": "RU", "country": "Russia", "os": "Android", "po": 40, "mindep": "200 RUB", "priority": "Secondary", "why": "Solid payout. Best for proven CIS sports traffic."}, {"geo": "TW", "country": "Taiwan", "os": "Android", "po": 30, "mindep": "150 TWD", "priority": "Secondary", "why": "Mid-high payout. Good for localized Android tests."}, {"geo": "MY", "country": "Malaysia", "os": "Android", "po": 20, "mindep": "10 MYR", "priority": "Secondary", "why": "Useful for SEA volume tests with betting/sports audience."}, {"geo": "KG", "country": "Kyrgyzstan", "os": "Android", "po": 20, "mindep": "75 KGS", "priority": "Secondary", "why": "CIS volume test with acceptable payout and low MinDep."}, {"geo": "LK", "country": "Sri Lanka", "os": "Android + iOS", "po": 20, "mindep": "10 LKR", "priority": "Secondary", "why": "Low MinDep. Test with sports-first sources and localized creatives."}, {"geo": "NP", "country": "Nepal", "os": "Android", "po": 17.5, "mindep": "125 NPR", "priority": "Secondary", "why": "Good volume test when source traffic has sports intent."}, {"geo": "IN", "country": "India", "os": "Android", "po": 15, "mindep": "75 INR", "priority": "Secondary", "why": "Large volume GEO. Best for cricket/football audience segments and low-cost testing."}, {"geo": "PK", "country": "Pakistan", "os": "Android + iOS", "po": 15, "mindep": "110 PKR", "priority": "Secondary", "why": "Large volume GEO. Sports audience targeting is important for quality."}, {"geo": "MX", "country": "Mexico", "os": "TBC", "po": 12.5, "mindep": "45 MXN", "priority": "Secondary", "why": "Host country opener can be used as a traffic hook. Confirm OS/link before launch."}, {"geo": "AR", "country": "Argentina", "os": "Android", "po": 11, "mindep": "46 ARS", "priority": "Secondary", "why": "Argentina match hooks are strong, payout is lower. Use for cheap sports traffic."}, {"geo": "BD", "country": "Bangladesh", "os": "Android", "po": 8, "mindep": "100 BDT", "priority": "Secondary", "why": "Volume GEO. Test proven sports/betting audience only."}, {"geo": "MM", "country": "Myanmar", "os": "Android", "po": 7.5, "mindep": "1000 MMK", "priority": "Secondary", "why": "Low payout; use when the source has cheap and clean sports traffic."}, {"geo": "CL", "country": "Chile", "os": "Android + iOS", "po": 7.5, "mindep": "740 CLP", "priority": "Secondary", "why": "LATAM test. Better as add-on volume if source already performs."}, {"geo": "EC", "country": "Ecuador", "os": "TBC", "po": 5.5, "mindep": "TBC", "priority": "Secondary", "why": "Ecuador has group matches. Confirm OS/link availability before launch."}, {"geo": "ML", "country": "Mali", "os": "iOS", "po": 5, "mindep": "574 XOF", "priority": "Secondary", "why": "iOS low-payout test. Use only with cheap traffic."}, {"geo": "CI", "country": "Ivory Coast", "os": "Android + iOS", "po": 5, "mindep": "100 XOF", "priority": "Secondary", "why": "World Cup team + low payout. Use for cheap sports traffic and local creatives."}, {"geo": "BF", "country": "Burkina Faso", "os": "Android + iOS", "po": 5, "mindep": "55 XOF", "priority": "Secondary", "why": "Low payout. Useful only for low-cost traffic sources."}, {"geo": "NG", "country": "Nigeria", "os": "Android", "po": 4, "mindep": "400 NGN", "priority": "Secondary", "why": "Low payout but large betting market. Launch only with low-cost sports audience."}, {"geo": "PH", "country": "Philippines", "os": "Android", "po": 2.5, "mindep": "120 PHP", "priority": "Secondary", "why": "Very low payout. Use only for cheap, proven betting traffic."}];
+const MATCH_DATA = [{"id": 1, "date": "Jun 11", "group": "A", "home": "Mexico", "away": "South Africa", "geo": ["MX"]}, {"id": 2, "date": "Jun 11", "group": "A", "home": "South Korea", "away": "Czechia", "geo": ["KR"]}, {"id": 3, "date": "Jun 12", "group": "B", "home": "Canada", "away": "Bosnia and Herzegovina", "geo": []}, {"id": 4, "date": "Jun 12", "group": "D", "home": "USA", "away": "Paraguay", "geo": []}, {"id": 5, "date": "Jun 13", "group": "B", "home": "Qatar", "away": "Switzerland", "geo": ["QA"]}, {"id": 6, "date": "Jun 13", "group": "C", "home": "Brazil", "away": "Morocco", "geo": ["MA"]}, {"id": 7, "date": "Jun 13", "group": "C", "home": "Haiti", "away": "Scotland", "geo": []}, {"id": 8, "date": "Jun 13", "group": "D", "home": "Australia", "away": "Türkiye", "geo": ["TR"]}, {"id": 9, "date": "Jun 14", "group": "E", "home": "Germany", "away": "Curaçao", "geo": []}, {"id": 10, "date": "Jun 14", "group": "F", "home": "Netherlands", "away": "Japan", "geo": []}, {"id": 11, "date": "Jun 14", "group": "E", "home": "Ivory Coast", "away": "Ecuador", "geo": ["CI", "EC"]}, {"id": 12, "date": "Jun 14", "group": "F", "home": "Tunisia", "away": "Sweden", "geo": []}, {"id": 13, "date": "Jun 15", "group": "H", "home": "Spain", "away": "Cape Verde", "geo": []}, {"id": 14, "date": "Jun 15", "group": "G", "home": "Belgium", "away": "Egypt", "geo": ["EG"]}, {"id": 15, "date": "Jun 15", "group": "H", "home": "Saudi Arabia", "away": "Uruguay", "geo": ["SA"]}, {"id": 16, "date": "Jun 15", "group": "G", "home": "Iran", "away": "New Zealand", "geo": []}, {"id": 17, "date": "Jun 16", "group": "I", "home": "France", "away": "Senegal", "geo": ["SN"]}, {"id": 18, "date": "Jun 16", "group": "I", "home": "Iraq", "away": "Norway", "geo": ["IQ"]}, {"id": 19, "date": "Jun 16", "group": "J", "home": "Argentina", "away": "Algeria", "geo": ["AR", "DZ"]}, {"id": 20, "date": "Jun 16", "group": "J", "home": "Austria", "away": "Jordan", "geo": ["JO"]}, {"id": 21, "date": "Jun 17", "group": "K", "home": "Portugal", "away": "Congo DR", "geo": []}, {"id": 22, "date": "Jun 17", "group": "L", "home": "England", "away": "Croatia", "geo": []}, {"id": 23, "date": "Jun 17", "group": "L", "home": "Ghana", "away": "Panama", "geo": []}, {"id": 24, "date": "Jun 17", "group": "K", "home": "Uzbekistan", "away": "Colombia", "geo": ["UZ"]}, {"id": 25, "date": "Jun 18", "group": "A", "home": "Czechia", "away": "South Africa", "geo": []}, {"id": 26, "date": "Jun 18", "group": "B", "home": "Switzerland", "away": "Bosnia and Herzegovina", "geo": []}, {"id": 27, "date": "Jun 18", "group": "B", "home": "Canada", "away": "Qatar", "geo": ["QA"]}, {"id": 28, "date": "Jun 18", "group": "A", "home": "Mexico", "away": "South Korea", "geo": ["MX", "KR"]}, {"id": 29, "date": "Jun 19", "group": "D", "home": "USA", "away": "Australia", "geo": []}, {"id": 30, "date": "Jun 19", "group": "C", "home": "Scotland", "away": "Morocco", "geo": ["MA"]}, {"id": 31, "date": "Jun 19", "group": "C", "home": "Brazil", "away": "Haiti", "geo": []}, {"id": 32, "date": "Jun 19", "group": "D", "home": "Türkiye", "away": "Paraguay", "geo": ["TR"]}, {"id": 33, "date": "Jun 20", "group": "F", "home": "Netherlands", "away": "Sweden", "geo": []}, {"id": 34, "date": "Jun 20", "group": "E", "home": "Germany", "away": "Ivory Coast", "geo": ["CI"]}, {"id": 35, "date": "Jun 20", "group": "E", "home": "Ecuador", "away": "Curaçao", "geo": ["EC"]}, {"id": 36, "date": "Jun 20", "group": "F", "home": "Tunisia", "away": "Japan", "geo": []}, {"id": 37, "date": "Jun 21", "group": "H", "home": "Spain", "away": "Saudi Arabia", "geo": ["SA"]}, {"id": 38, "date": "Jun 21", "group": "G", "home": "Belgium", "away": "Iran", "geo": []}, {"id": 39, "date": "Jun 21", "group": "H", "home": "Uruguay", "away": "Cape Verde", "geo": []}, {"id": 40, "date": "Jun 21", "group": "G", "home": "New Zealand", "away": "Egypt", "geo": ["EG"]}, {"id": 41, "date": "Jun 22", "group": "J", "home": "Argentina", "away": "Austria", "geo": ["AR"]}, {"id": 42, "date": "Jun 22", "group": "I", "home": "France", "away": "Iraq", "geo": ["IQ"]}, {"id": 43, "date": "Jun 22", "group": "I", "home": "Norway", "away": "Senegal", "geo": ["SN"]}, {"id": 44, "date": "Jun 22", "group": "J", "home": "Jordan", "away": "Algeria", "geo": ["JO", "DZ"]}, {"id": 45, "date": "Jun 23", "group": "K", "home": "Portugal", "away": "Uzbekistan", "geo": ["UZ"]}, {"id": 46, "date": "Jun 23", "group": "L", "home": "England", "away": "Ghana", "geo": []}, {"id": 47, "date": "Jun 23", "group": "L", "home": "Panama", "away": "Croatia", "geo": []}, {"id": 48, "date": "Jun 23", "group": "K", "home": "Colombia", "away": "Congo DR", "geo": []}, {"id": 49, "date": "Jun 24", "group": "B", "home": "Switzerland", "away": "Canada", "geo": []}, {"id": 50, "date": "Jun 24", "group": "B", "home": "Bosnia", "away": "Qatar", "geo": ["QA"]}, {"id": 51, "date": "Jun 24", "group": "C", "home": "Brazil", "away": "Scotland", "geo": []}, {"id": 52, "date": "Jun 24", "group": "C", "home": "Morocco", "away": "Haiti", "geo": ["MA"]}, {"id": 53, "date": "Jun 24", "group": "A", "home": "Mexico", "away": "Czechia", "geo": ["MX"]}, {"id": 54, "date": "Jun 24", "group": "A", "home": "South Korea", "away": "South Africa", "geo": ["KR"]}, {"id": 55, "date": "Jun 25", "group": "E", "home": "Ecuador", "away": "Germany", "geo": ["EC"]}, {"id": 56, "date": "Jun 25", "group": "E", "home": "Curaçao", "away": "Ivory Coast", "geo": ["CI"]}, {"id": 57, "date": "Jun 25", "group": "F", "home": "Tunisia", "away": "Netherlands", "geo": []}, {"id": 58, "date": "Jun 25", "group": "F", "home": "Japan", "away": "Sweden", "geo": []}, {"id": 59, "date": "Jun 25", "group": "D", "home": "USA", "away": "Türkiye", "geo": ["TR"]}, {"id": 60, "date": "Jun 25", "group": "D", "home": "Paraguay", "away": "Australia", "geo": []}, {"id": 61, "date": "Jun 26", "group": "I", "home": "Norway", "away": "France", "geo": []}, {"id": 62, "date": "Jun 26", "group": "I", "home": "Senegal", "away": "Iraq", "geo": ["SN", "IQ"]}, {"id": 63, "date": "Jun 26", "group": "H", "home": "Uruguay", "away": "Spain", "geo": []}, {"id": 64, "date": "Jun 26", "group": "H", "home": "Cape Verde", "away": "Saudi Arabia", "geo": ["SA"]}, {"id": 65, "date": "Jun 26", "group": "G", "home": "New Zealand", "away": "Belgium", "geo": []}, {"id": 66, "date": "Jun 26", "group": "G", "home": "Egypt", "away": "Iran", "geo": ["EG"]}, {"id": 67, "date": "Jun 27", "group": "L", "home": "Panama", "away": "England", "geo": []}, {"id": 68, "date": "Jun 27", "group": "L", "home": "Croatia", "away": "Ghana", "geo": []}, {"id": 69, "date": "Jun 27", "group": "K", "home": "Colombia", "away": "Portugal", "geo": []}, {"id": 70, "date": "Jun 27", "group": "K", "home": "Congo DR", "away": "Uzbekistan", "geo": ["UZ"]}, {"id": 71, "date": "Jun 27", "group": "J", "home": "Argentina", "away": "Jordan", "geo": ["AR", "JO"]}, {"id": 72, "date": "Jun 27", "group": "J", "home": "Algeria", "away": "Austria", "geo": ["DZ"]}];
+const OPENING_UTC = new Date('2026-06-11T19:00:00Z');
+let sortKey = 'po';
+let sortDir = -1;
+let selected = new Set(['KR','SA','MA','TR']);
+
+function money(n) { return '$' + Number(n).toFixed(Number(n)%1 ? 1 : 0); }
+function toast(msg='Copied') { const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1600); }
+async function copyText(text) { try { await navigator.clipboard.writeText(text); toast('Copied to clipboard'); } catch(e) { fallbackCopy(text); } }
+function fallbackCopy(text) { const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast('Copied to clipboard'); }
+
+function updateCountdown() {
+  const now = new Date(); let diff = OPENING_UTC - now;
+  if (diff < 0) diff = 0;
+  const s = Math.floor(diff/1000);
+  const d = Math.floor(s/86400), h = Math.floor((s%86400)/3600), m = Math.floor((s%3600)/60), sec = s%60;
+  document.getElementById('days').textContent = d;
+  document.getElementById('hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('minutes').textContent = String(m).padStart(2,'0');
+  document.getElementById('seconds').textContent = String(sec).padStart(2,'0');
+}
+setInterval(updateCountdown, 1000);
+
+function renderTicker() {
+  const top = [...GEO_DATA].sort((a,b)=>b.po-a.po).slice(0,14);
+  const doubled = [...top, ...top];
+  document.getElementById('ticker').innerHTML = doubled.map(g=>`<div class="ticker-card"><strong>${g.geo} · ${g.country}</strong><b>${money(g.po)}</b><div class="muted">${g.os} · ${g.priority}</div></div>`).join('');
+}
+
+function renderGeoLists() {
+  const p = GEO_DATA.filter(g=>g.priority==='Priority').map(g=>`<button class="lightchip" onclick="toggleGeo('${g.geo}')">${g.geo} · ${money(g.po)}</button>`).join('');
+  const s = GEO_DATA.filter(g=>g.priority==='Secondary').slice(0,22).map(g=>`<button class="lightchip" onclick="toggleGeo('${g.geo}')">${g.geo} · ${money(g.po)}</button>`).join('');
+  document.getElementById('priorityList').innerHTML = p;
+  document.getElementById('secondaryList').innerHTML = s;
+}
+
+function renderGeoTable() {
+  const q = document.getElementById('geoSearch').value.toLowerCase().trim();
+  const pf = document.getElementById('priorityFilter').value;
+  const of = document.getElementById('osFilter').value;
+  let rows = GEO_DATA.filter(g => {
+    const hay = `${g.geo} ${g.country} ${g.os} ${g.po} ${g.mindep} ${g.priority} ${g.why}`.toLowerCase();
+    return (!q || hay.includes(q)) && (pf==='All' || g.priority===pf) && (of==='All' || g.os.includes(of));
+  });
+  rows.sort((a,b)=>{
+    let av=a[sortKey], bv=b[sortKey];
+    if (sortKey==='po') return (av-bv)*sortDir;
+    return String(av).localeCompare(String(bv))*sortDir;
+  });
+  document.querySelector('#geoTable tbody').innerHTML = rows.map(g=>`<tr>
+    <td><span class="geo-pill">${g.geo}</span></td><td><b>${g.country}</b></td><td>${g.os}</td><td><b>${money(g.po)}</b></td><td>${g.mindep}</td>
+    <td><span class="priority ${g.priority}">${g.priority}</span></td><td>${g.why}</td>
+    <td><button class="select-btn ${selected.has(g.geo)?'active':''}" onclick="toggleGeo('${g.geo}')">${selected.has(g.geo)?'Selected':'Add'}</button></td>
+  </tr>`).join('');
+  renderSelected();
+}
+
+document.querySelectorAll('#geoTable th[data-sort]').forEach(th=>{
+  th.addEventListener('click',()=>{ const key=th.dataset.sort; if (sortKey===key) sortDir*=-1; else { sortKey=key; sortDir=key==='po'?-1:1; } renderGeoTable(); });
+});
+
+function toggleGeo(geo) { selected.has(geo) ? selected.delete(geo) : selected.add(geo); renderGeoTable(); resetPidBox(false); }
+function clearSelected() { selected.clear(); renderGeoTable(); resetPidBox(false); }
+function renderSelected() {
+  const el=document.getElementById('selectedChips');
+  if (!selected.size) { el.innerHTML='<span class="muted">Selected GEOs will appear here. You can also edit the message manually.</span>'; return; }
+  el.innerHTML=[...selected].sort().map(g=>`<button class="chip" onclick="toggleGeo('${g}')">${g} ×</button>`).join('');
+}
+function selectedText() { return [...selected].sort().join(', ') || 'TBC'; }
+function pidTemplate() { return `Hello! We can launch 1xBet World Cup 2026 traffic.
+
+Network name:
+Contact person:
+Contact: Telegram / Skype / Email
+GEOs: ${selectedText()}
+OS: Android / iOS / both
+Source type:
+Expected daily volume:
+PIDs for test:
+Previous betting / sports cases:
+Comments:
+
+Campaign: 1xBet · CPA · first_deposit · AppsFlyer · CTA only · Protect360.
+Please send launch details to e.podgayskaya@appska.com.`; }
+function resetPidBox(show=true) { document.getElementById('pidBox').value = pidTemplate(); if(show) toast('Template reset'); }
+function copyPidTemplate() { copyText(document.getElementById('pidBox').value || pidTemplate()); }
+function copyFromBox() { copyText(document.getElementById('pidBox').value); }
+
+function briefText() { return `1xBet World Cup 2026 CPA campaign
+
+Offer: 1xBet
+Vertical: iGaming / Betting
+Model: CPA
+PO event: first_deposit
+MMP: AppsFlyer
+Onelink: yes
+Traffic rule: CTA only, VTA not allowed
+Antifraud: Protect360
+CRM/BI reconciliation: yes
+Soft KPI: CR click2install > 0.5%
+Hard KPI: sum of all deposits should be at least 30% from costs
+Hard KPI: sum of player bids should be x3 from sum of deposits
+Fraud is prohibited and will not be paid
+
+Priority GEOs: ${GEO_DATA.filter(g=>g.priority==='Priority').map(g=>g.geo).join(', ')}
+
+Send network name, GEOs, OS, source type, expected daily volume and PIDs for test.`; }
+function copyBrief() { copyText(briefText()); }
+function copyEmail() { copyText('e.podgayskaya@appska.com'); }
+function mailtoDraft() { const subject=encodeURIComponent('1xBet World Cup 2026 — PIDs for test'); const body=encodeURIComponent(document.getElementById('pidBox').value || pidTemplate()); window.location.href=`mailto:e.podgayskaya@appska.com?subject=${subject}&body=${body}`; }
+
+function renderMatches() {
+  const q=document.getElementById('matchSearch').value.toLowerCase().trim();
+  const mode=document.getElementById('matchGeoFilter').value;
+  let list=MATCH_DATA.filter(m=>{
+    const tags=(m.geo||[]).join(' ');
+    const hay=`${m.date} Group ${m.group} ${m.home} ${m.away} ${tags}`.toLowerCase();
+    return (!q || hay.includes(q)) && (mode==='All' || (m.geo&&m.geo.length));
+  });
+  document.getElementById('matchList').innerHTML=list.map(m=>`<div class="match"><div class="date">${m.date} · Group ${m.group}</div><div class="teams">${m.home} <span class="muted">vs</span> ${m.away}</div><div class="tags">${m.geo.length ? m.geo.map(x=>`<span class="tag">${x} hook</span>`).join('') : '<span class="tag">global hook</span>'}</div></div>`).join('');
+}
+
+function csvEscape(v) { return `"${String(v).replaceAll('"','""')}"`; }
+function download(filename, text) { const blob=new Blob([text],{type:'text/csv;charset=utf-8'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=filename; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href); }
+function downloadGeoCsv() { const header=['GEO','Country','OS','PO','MinDep','Priority','Why']; const lines=[header.join(',')].concat(GEO_DATA.map(g=>[g.geo,g.country,g.os,g.po,g.mindep,g.priority,g.why].map(csvEscape).join(','))); download('1xbet_worldcup_geo_payouts.csv', lines.join('\n')); }
+function downloadMatchCsv() { const header=['Date','Group','Home','Away','Relevant GEOs']; const lines=[header.join(',')].concat(MATCH_DATA.map(m=>[m.date,m.group,m.home,m.away,(m.geo||[]).join(' ')].map(csvEscape).join(','))); download('worldcup_2026_match_hooks.csv', lines.join('\n')); }
+
+
+function initScrollRocket() {
+  const rocket = document.getElementById('scrollRocket');
+  if (!rocket) return;
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+  let ticking = false;
+  let lastY = window.scrollY || 0;
+  const update = () => {
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+    const travel = Math.max(0, window.innerHeight - 260);
+    const y = Math.round(progress * travel);
+    const delta = (window.scrollY || 0) - lastY;
+    lastY = window.scrollY || 0;
+    const rot = Math.max(-18, Math.min(18, -8 + delta * 0.09));
+    rocket.style.setProperty('--rocket-y', y + 'px');
+    rocket.style.setProperty('--rocket-rot', rot + 'deg');
+    rocket.style.opacity = progress > .985 ? '.38' : '.78';
+    ticking = false;
+  };
+  const requestUpdate = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  };
+  window.addEventListener('scroll', requestUpdate, {passive:true});
+  window.addEventListener('resize', requestUpdate, {passive:true});
+  update();
+}
+
+function init() { initScrollRocket(); updateCountdown(); renderTicker(); renderGeoLists(); renderGeoTable(); renderMatches(); resetPidBox(false); }
+init();
+</script>
+</body>
+</html>
